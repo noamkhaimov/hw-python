@@ -33,73 +33,81 @@ while True:
         """
         Receive price
         """
-        # Your code goes here
-
+        price = float(input("Please insert the price of the milk:"))
         """
         Receive expiration date
         """
-        # Your code goes here
-
+        expiration_date = input("Please insert the expiration date of the milk:")
         """
         Create a new Milk object, and add it to the <grocery_store> list. 
         """
-        # Your code goes here
+        grocery_store.append(Milk(price, expiration_date))
     elif command == "add_pepper":
         pass
         """
         Receive color from the user
         """
-        # Your code goes here
-
+        color = input("Please insert the color of the pepper:")
         """
         Receive price_per_kg from the user
         """
-        # Your code goes here
-
+        price_per_kg = float(input("Please insert the price per kg of the pepper:"))
         """
         Receive weight from the user
         """
-        # Your code goes here
-
+        weight = float(input("Please insert the weight of the pepper:"))
         """
         Create a new Pepper object, and add it to the <grocery_store> list. 
         """
-        # Your code goes here
+        grocery_store.append(Pepper(color, price_per_kg, weight))
     elif command == "print":
         pass
         """
         Prints all the items in the <grocery_store> list, using the "print_details" method.
         """
-        # Your code goes here
+        for item in grocery_store:
+            item.print_details()
     elif command == "put_on_shelf":
         pass
         """
         Receives shelf_id from the user
         """
-        # Your code goes here
+        shelf_id = int(input("Please insert the shelf id:"))
 
         """
         Call `put_on_shelf` method with the received <shelf_id> for all the items in the list.
         """
-        # Your code goes here
+        for item in grocery_store:
+            item.put_on_shelf(shelf_id)
     elif command == "total_value":
         pass
         """
         Prints the TOTAL price of all the items in the <grocery_store> list.
         """
-        # Your code goes here
+        print(sum([item.get_price() for item in grocery_store]))
     elif command == "avg_value":
         pass
         """
         Prints the AVERAGE price of all the items in the <grocery_store> list.
         """
-        # Your code goes here
+        if grocery_store:
+            avg_value = sum([item.get_price() for item in grocery_store]) / len(grocery_store)
+            print(f"{avg_value:.2f}")
+        else:
+            print("No items in the store")
     elif command == "remove":
         pass
         """
         Receive the id of the item to remove from the user
         """
-        # Your code goes here
+        id_to_remove = int(input("Please insert the id of the item you want to remove:"))
+        for item in grocery_store:
+            if item.get_id() == id_to_remove:
+                grocery_store.remove(item)
+                print(f"Item #{id_to_remove} has been removed.")
+                break
+            else:
+                print(f"Item with id {id_to_remove} does not exist.")
 
         """
         If an item with the received id exists - remove the item.
