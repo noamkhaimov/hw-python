@@ -6,7 +6,7 @@ class Item(abc.ABC):
     This class represents an item - which will be used in the store.
     """
 
-    _ITEM_ID_GEN_CTR_ = None
+    _ITEM_ID_GEN_CTR_ = 0
 
     def __init__(self, name: str, price: float):
         """
