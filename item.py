@@ -22,7 +22,7 @@ class Item(abc.ABC):
         ##########################
 
         # PART 4: You can (and SHOULD) change the following line, and add more line(s) if needed.
-        self._item_id = self._ITEM_ID_GEN_CTR_
+        self._item_id = Item._ITEM_ID_GEN_CTR_
         Item._ITEM_ID_GEN_CTR_ += 1
 
     def get_id(self) -> int:
