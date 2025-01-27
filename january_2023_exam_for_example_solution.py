@@ -136,7 +136,7 @@ print(df.head(3))
 
 print(len(df))
 print(len(df.columns))
-print(df["grades"].to_numpy())
+print(df["grades"].to_numpy(copy = True))
 
 """
 Task 3: (15 Points)
