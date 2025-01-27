@@ -104,10 +104,10 @@ Use numpy to create an array containing numbers from 1 to 5.
 Create a 5x5 matrix where each row is the array multiplied by a different scalar.
 Print the matrix.
 """
-"""import numpy as np
+import numpy as np
 arr = np.arange(1, 6)
 matrix = np.arange(1, 6).reshape(-1, 1) * arr
-print(matrix)"""
+print(matrix)
 
 """
 Task 2: (16 Points)
